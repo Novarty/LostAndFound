@@ -29,36 +29,27 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
-    respond_to do |format|
       if @item.save
         redirect_to @item, notice: 'Item was successfully created.'
       else
         render :new 
       end
-    end
   end
 
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    respond_to do |format|
       if @item.update(item_params)
         redirect_to @item, notice: 'Item was successfully updated.'
       else
         render :edit
       end
-    end
   end
 
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
