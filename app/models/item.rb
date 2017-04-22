@@ -1,14 +1,16 @@
 class Item < ApplicationRecord
+
+  # attr_accessible :title, :description, :tag_list
   has_many :taggings
   has_many :tags, through: :taggings
 
-  def all_tags=(names)
+  def tag_list=(names)
     self.tags = names.split(",").map do |name|
         Tag.where(name: name.strip).first_or_create!
     end
   end
 
-  def all_tags
+  def tag_list
     self.tags.map(&:name).join(", ")
   end
 

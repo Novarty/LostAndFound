@@ -10,10 +10,9 @@
   <%= @item.description %>
 </p>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @item.tag_id %>
-</p>
+<div class="tags">
+      <%=raw tag_links(items.all_tags)%>
+</div>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
