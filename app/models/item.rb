@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
-
   # attr_accessible :title, :description, :tag_list
+  belongs_to :user
+  has_many :question
+  
   has_many :taggings
   has_many :tags, through: :taggings
 
@@ -17,4 +19,5 @@ class Item < ApplicationRecord
   def self.tagged_with(name)
     Tag.find_by_name!(name).items
   end
+  
 end
