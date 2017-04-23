@@ -28,11 +28,15 @@ class ItemsController < ApplicationController
   private
 
     def fetch_items
+      if params[:tag]
+        items = Item.tagged_with(params[:tag])
+      else
       items = Item.all
+      end
       items
     end
 
     def item_params
-      params.require(:item).permit(:title, :description, :tag_id)
+      params.require(:item).permit(:title, :description, :tag_list)
     end
 end

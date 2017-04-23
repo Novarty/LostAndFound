@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Tag:</strong>
-  <%= item.tag_id %>
+  <strong>Tags:</strong>
+  <%= raw item.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(item) %> |
