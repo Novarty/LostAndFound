@@ -14,6 +14,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-i18n'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'draper'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+gem 'decent_exposure'
+gem 'decent_decoration'
 
 group :development, :test do
   gem 'pry-rails'
