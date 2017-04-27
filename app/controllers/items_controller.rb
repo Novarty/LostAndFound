@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
       else
       items = Item.all
       end
+      items = items.where("title ILIKE ?", "%#{params[:search]}%") if params[:search]
       items
     end
 

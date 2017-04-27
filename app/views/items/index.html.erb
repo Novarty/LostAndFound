@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Items</h1>
+<%= form_tag items_path, method: 'get' do %>
+<%= text_field_tag :search %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 
 <table>
   <thead>
