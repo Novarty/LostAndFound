@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :question
   
-  has_many :taggings
+  has_many :taggings, :dependent => :destroy
   has_many :tags, through: :taggings
 
   def tag_list=(names)
