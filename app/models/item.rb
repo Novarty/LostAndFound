@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   # attr_accessible :title, :description, :tag_list
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :question
   
   has_many :taggings, :dependent => :destroy
