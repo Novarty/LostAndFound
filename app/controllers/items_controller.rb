@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   expose_decorated :items, -> { fetch_items }
 
   def create
+    item.user_id = current_user.id
     if item.save
       redirect_to item, notice: 'Item was successfully created.'
     else
