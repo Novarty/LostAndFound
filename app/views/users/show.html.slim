@@ -2,5 +2,23 @@
   .panel.panel-default
     .panel-body
       .default-information
-        =user.name
-        =user.surname
+        h4 ="#{user.name} #{user.surname}"
+        .photo
+          | photo here
+        br
+        b Date of birthday:
+        =" #{user.birthday}"
+      .contact-information
+        b Tel:
+        =" #{user.telephone}"
+        br
+        b e-mail:
+        =" #{user.email}"
+        br
+        b Address:
+        -if user.location.nil?
+          =" none"
+        -else
+          =" #{user.location}"
+      .action
+        =link_to "Edit", edit_user_registration_path if current_user.id == user.id

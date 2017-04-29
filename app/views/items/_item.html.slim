@@ -5,4 +5,4 @@
       =item.description
       .author
         span Author:
-        =link_to item.get_author, item
+        =link_to item.get_author, user_path(item.user_id)
