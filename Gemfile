@@ -18,6 +18,7 @@ gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'decent_exposure'
 gem 'decent_decoration'
+gem 'slim'
 
 group :development, :test do
   gem 'pry-rails'

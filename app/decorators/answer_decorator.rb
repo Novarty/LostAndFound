@@ -1,4 +1,4 @@
-class ItemDecorator < Draper::Decorator
+class AnswerDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -9,9 +9,5 @@ class ItemDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
-  def get_author
-    user = User.find_by_id(user_id)
-  end
 
 end
