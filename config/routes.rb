@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # for search in tags
   get 'tags/:tag', to: 'items#index', as: "tag"
 
-  devise_for :users, :controllers => { registrations: 'registration/registrations' }
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
 end
