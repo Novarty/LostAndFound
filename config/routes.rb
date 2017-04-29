@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answers
 	root 'items#index'
   resources :questions
   resources :items
