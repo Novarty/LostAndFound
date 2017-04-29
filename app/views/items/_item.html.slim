@@ -1,0 +1,8 @@
+.item-panel
+  .panel.panel-default
+    .panel-body
+      h4 =link_to item.title, item
+      =item.description
+      .author
+        span Author:
+        =link_to item.get_author, item

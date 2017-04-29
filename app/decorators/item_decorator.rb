@@ -12,6 +12,7 @@ class ItemDecorator < Draper::Decorator
 
   def get_author
     user = User.find_by_id(user_id)
+    " #{user.name} #{user.surname}"
   end
 
 end
