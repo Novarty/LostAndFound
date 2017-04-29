@@ -4,13 +4,6 @@
 
 .row
   -items.each do |item|
-    .item-panel
-      .panel.panel-default
-        .panel-body
-          h4 =link_to item.title, item
-          =item.description
-          .author
-            | Author:
-            =link_to " #{item.get_author.name} #{item.get_author.surname}", item
+    =render item
 
 
