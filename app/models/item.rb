@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  # attr_accessible :title, :description, :tag_list
   belongs_to :user, optional: true
   has_many :question
   
@@ -20,4 +19,10 @@ class Item < ApplicationRecord
     Tag.find_by_name!(name).items
   end
   
+  def self.tag_counts
+  Tag.select("tags.*, count(taggings.tag_id) as count").
+    joins(:taggings).group("taggings.tag_id")
+  end
+  
+
 end
