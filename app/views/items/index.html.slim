@@ -7,16 +7,6 @@
     - tag_cloud Item.tag_counts, %w[s m l] do |tag, css_class|
       = link_to tag.name, tag_path(tag.name), class: css_class
   -items.each do |item|
-    .item-panel
-      .panel.panel-default
-        .panel-body
-          h4 =item.title
-          =item.description
-          .author
-            | Tags: 
-            =raw item.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')
-          .author
-            | Author:
-            / =link_to " #{item.get_author.name} #{item.get_author.surname}", item
+    =render item
 
 

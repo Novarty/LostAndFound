@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, :start_year => 1930, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,7 +36,7 @@
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
-      <br />
+      <br/>
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
