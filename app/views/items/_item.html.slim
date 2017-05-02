@@ -4,5 +4,8 @@
       h4 =link_to item.title, item
       =item.description
       .author
+        span Tags: 
+        = raw item.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')
+      .author
         span Author:
-        =link_to item.get_author, user_path(item.user_id)
+        / =link_to item.get_author, user_path(item.user_id)
